@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Agartala AI Website Hackathon 2026</title>
+<meta name="description" content="Frequently asked questions about registration, fees, seats, Claude usage, GitHub submission, certificates, prizes and refunds for the Agartala AI Website Hackathon 2026.">
+<link rel="canonical" href="https://example.com/pages/faq.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C15F3C'/%3E%3Ctext x='50' y='68' font-size='60' fill='white' text-anchor='middle' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I register?","acceptedAnswer":{"@type":"Answer","text":"Fill out the registration form on our Register page with your details, choose a seat tier, accept the terms, and complete the simulated/real payment step depending on deployment."}},
+    {"@type":"Question","name":"What does the fee cover?","acceptedAnswer":{"@type":"Answer","text":"The registration fee covers your seat in the hackathon, access to the live Google Meet session, judging, and a digital participation certificate."}}
+  ]
+}
+</script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="section" style="padding-top: var(--space-16);">
+    <div class="container" style="max-width: 820px;">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h1>Frequently asked questions</h1>
+      </div>
+
+      <div id="faqList"></div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="../js/config.js"></script>
+<script src="../js/layout.js"></script>
+<script>
+(function(){
+  const faqs = [
+    { q: "How do I register?", a: "Go to the Register page, fill in your details, choose Early Bird (₹299, first 5 seats) or Standard (₹499), accept the terms, and submit. You'll get an on-screen confirmation plus an email/WhatsApp follow-up." },
+    { q: "What does the fee cover?", a: "Your seat in the live event, access to the challenge brief, judging of your submission, and a digital participation certificate. Winners additionally receive cash prizes and (for 1st place) a Claude Pro subscription." },
+    { q: "How many seats are available?", a: "Exactly 50 seats total — 5 at Early Bird pricing (₹299) and 45 at Standard pricing (₹499). Seat counts update live on the Home and Register pages and are never artificially inflated or faked." },
+    { q: "Who is eligible to participate?", a: "Students, developers, freelancers, and tech enthusiasts, primarily from Agartala/Tripura but open to anyone who can join online. See our full Rules page for eligibility details." },
+    { q: "Do I need to know Claude already?", a: "No prior Claude experience is required. Claude is the required AI tool for the challenge, and basic guidance will be shared before the event starts." },
+    { q: "Do I need a GitHub account?", a: "Yes — GitHub is the required submission platform. Create a free account beforehand if you don't have one, and have it ready before the event starts." },
+    { q: "How do I join the Google Meet?", a: "The Meet link is shared with confirmed participants via email and the official WhatsApp group ahead of the event, and again shortly before check-in opens." },
+    { q: "When do I get added to the WhatsApp group?", a: "Immediately after your registration is confirmed, you'll see a 'Join WhatsApp Group' button, and an invite will also be sent to your registered email/phone." },
+    { q: "Do I get a certificate?", a: "Yes. All participants who submit a valid project within the deadline receive a digital participation certificate. Top 3 winners receive a separate winner certificate." },
+    { q: "How are prizes decided?", a: "Judges score every submission on a transparent 100-point rubric (Functionality, UI/UX, Problem Understanding, Creativity, AI-Assisted Development, Technical Implementation, Final Presentation). See the Prizes page for the full breakdown." },
+    { q: "What is the refund policy?", a: "Please see our dedicated Refund & Cancellation Policy page for exact timelines and conditions." },
+    { q: "How and when do I submit my project?", a: "Before the 2-hour deadline, submit your GitHub repository link and live demo URL through the official submission form shared during the event." },
+    { q: "Will judging results be public?", a: "Yes. Winners are announced live at the event and published afterward on our Results page along with verified project links." },
+    { q: "Does this guarantee a job, internship, or freelance work?", a: "No. Participation, prizes, and certificates do not guarantee placement, internship, or freelance opportunities. Any such support offered is best-effort and not contractual." },
+    { q: "What do I need technically?", a: "A laptop or desktop with a stable internet connection, a modern browser, a webcam/mic for Google Meet, a GitHub account, and access to Claude for the build." }
+  ];
+
+  const list = document.getElementById('faqList');
+  faqs.forEach((item, i) => {
+    const id = 'faq-' + i;
+    const wrap = document.createElement('div');
+    wrap.className = 'accordion-item';
+    wrap.innerHTML = `
+      <h3 style="margin:0;">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="${id}-panel" id="${id}-trigger">
+          <span>${item.q}</span>
+          <span class="accordion-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+      </h3>
+      <div class="accordion-panel" id="${id}-panel" role="region" aria-labelledby="${id}-trigger">
+        <div class="accordion-panel-inner"><p style="margin:0;">${item.a}</p></div>
+      </div>`;
+    list.appendChild(wrap);
+  });
+
+  list.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.accordion-trigger');
+    if (!trigger) return;
+    const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+    panel.style.maxHeight = isOpen ? '0px' : panel.scrollHeight + 'px';
+  });
+})();
+</script>
+</body>
+</html>

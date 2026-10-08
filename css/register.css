@@ -1,0 +1,23 @@
+/* ==========================================================================
+   REGISTRATION PAGE STYLES
+   ========================================================================== */
+.reg-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-10);
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .reg-layout { grid-template-columns: 1fr; }
+}
+.reg-summary { position: sticky; top: calc(var(--header-h) + var(--space-6)); }
+
+.step-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--primary-light); color: var(--primary-dark);
+  font-family: var(--font-mono); font-weight: 700; font-size: var(--fs-sm);
+  margin-right: var(--space-2);
+}
+
+#regSuccessPanel, #regClosedPanel, #regSoldOutPanel { display: none; }
